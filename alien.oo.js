@@ -1,13 +1,13 @@
 turing.Class = function() {
-  return turing.oo.create.apply(this, arguments);
+  return alien.oo.create.apply(this, arguments);
 }
 
-turing.oo = {
+alien.oo = {
   create: function() {
     var methods = null,
         parent  = undefined,
         klass   = function() {
-          this.super = function(method, args) { return turing.oo.super(this.$parent, this, method, args); };
+          this.super = function(method, args) { return alien.oo.super(this.$parent, this, method, args); };
           this.initialize.apply(this, arguments);
         };
 
@@ -19,12 +19,12 @@ turing.oo = {
     }
 
     if (typeof parent !== 'undefined') {
-      turing.oo.extend(klass.prototype, parent.prototype);
+      alien.oo.extend(klass.prototype, parent.prototype);
       klass.prototype.$parent = parent.prototype;
     }
 
-    turing.oo.mixin(klass, methods);
-    turing.oo.extend(klass.prototype, methods);
+    alien.oo.mixin(klass, methods);
+    alien.oo.extend(klass.prototype, methods);
     klass.prototype.constructor = klass;
 
     if (!klass.prototype.initialize)
@@ -36,10 +36,10 @@ turing.oo = {
   mixin: function(klass, methods) {
     if (typeof methods.include !== 'undefined') {
       if (typeof methods.include === 'function') {
-        turing.oo.extend(klass.prototype, methods.include.prototype);
+        alien.oo.extend(klass.prototype, methods.include.prototype);
       } else {
         for (var i = 0; i < methods.include.length; i++) {
-          turing.oo.extend(klass.prototype, methods.include[i].prototype);
+          alien.oo.extend(klass.prototype, methods.include[i].prototype);
         }
       }
     }
