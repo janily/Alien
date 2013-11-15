@@ -1,3 +1,4 @@
+(function() {
 var dom = {}, InvalidFinder = Error, macros, rules, tokenMap,
       find, matchMap, findMap, filter, scannerRegExp, nodeTypes,
       getStyle, setStyle, cssNumericalProperty, propertyFix,
@@ -1018,3 +1019,4 @@ var dom = {}, InvalidFinder = Error, macros, rules, tokenMap,
       };
     });
   }
+});

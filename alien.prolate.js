@@ -1,3 +1,4 @@
+(function() {
 alien.prolate = {
   Break: {},
 
@@ -104,3 +105,4 @@ if (typeof module !== 'undefined') {
 } else {
     EnumerableModule(turing);
 }
+});

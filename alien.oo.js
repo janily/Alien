@@ -1,4 +1,4 @@
-turing.Class = function() {
+alien.Class = function() {
   return alien.oo.create.apply(this, arguments);
 }
 
